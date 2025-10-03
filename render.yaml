@@ -16,12 +16,12 @@ services:
       - key: PORT
         value: "5000"
 
-  # Frontend service
-  - type: static
+  # Frontend service (serve static files using a lightweight Node server)
+  - type: web
     name: ai-career-frontend
+    env: node
     branch: main
     plan: free
     buildCommand: "cd front-end/vite-project && npm install && npm run build"
-    startCommand: "echo 'Frontend deployed'"
-    staticPublishPath: "front-end/vite-project/dist"
+    startCommand: "cd front-end/vite-project && npx serve -s dist -l 3000"
     autoDeploy: true
