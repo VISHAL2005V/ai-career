@@ -1,0 +1,7 @@
+/* Custom utility overrides or animations */
+.btn-gradient {
+  background: linear-gradient(to right, #6366f1, #22c55e);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
