@@ -2,10 +2,9 @@
   "name": "ai-career-guidance",
   "private": true,
   "scripts": {
-    "start": "npm run start:all",
     "start:all": "concurrently \"npm run backend\" \"npm run frontend\"",
-    "backend": "cd back-end && npm install && npm run start",
-    "frontend": "cd front-end/vite-project && npm install && npx vite build && npx serve -s dist -l 3000"
+    "backend": "cd backend && npm install && npm run start",
+    "frontend": "cd front-end && npm install && npx vite build && npx serve -s vite-project/dist -l $PORT"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"

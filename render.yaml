@@ -5,24 +5,23 @@ services:
     env: node
     branch: main
     plan: free
-    buildCommand: "cd back-end && npm install"
-    startCommand: "cd back-end && npm run start"
+    buildCommand: "cd backend && npm install"
+    startCommand: "cd backend && npm start"
     autoDeploy: true
     envVars:
       - key: MONGO_URI
-        value: "mongodb://127.0.0.1:27017/myapp"
+        value: "<your-mongo-uri>"
       - key: JWT_SECRET
         value: "mysupersecret"
       - key: PORT
         value: "5000"
 
-  # Frontend service (serve static files using Node)
+  # Frontend service
   - type: web
     name: ai-career-frontend
     env: node
     branch: main
     plan: free
-    buildCommand: "cd front-end/vite-project && npm install && npm run build"
-    startCommand: "cd front-end/vite-project && npx serve -s dist -l 5173"
+    buildCommand: "cd front-end && npm install && npx vite build"
+    startCommand: "cd front-end && npx serve -s vite-project/dist -l $PORT"
     autoDeploy: true
-    envVars: []
