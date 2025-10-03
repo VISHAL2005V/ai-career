@@ -1,9 +1,10 @@
 {
   "name": "ai-career-guidance",
   "private": true,
+  "version": "1.0.0",
   "scripts": {
     "start:all": "concurrently \"npm run backend\" \"npm run frontend\"",
-    "backend": "cd back-end && npm install && npm start",
+    "backend": "cd back-end && npm install && npm run dev",
     "frontend": "cd front-end/vite-project && npm install && npm run dev"
   },
   "devDependencies": {

@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "backend": "node server.js",
+    "start:all": "concurrently \"npm run backend\" \"cd ../front-end/vite-project && npm run dev\""
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
