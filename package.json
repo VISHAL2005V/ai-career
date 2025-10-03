@@ -4,10 +4,11 @@
   "scripts": {
     "start": "npm run start:all",
     "start:all": "concurrently \"npm run backend\" \"npm run frontend\"",
-    "backend": "cd backend && npm install && npm run start",
-    "frontend": "cd front-end && npm install && npx vite build && npx serve -s vite-project/dist -l $PORT"
+    "backend": "cd backend && npm install && npm start",
+    "frontend": "cd front-end && npm install && npx vite build && npx serve -s vite-project/dist -l ${PORT:-3000}"
   },
   "devDependencies": {
-    "concurrently": "^9.2.1"
+    "concurrently": "^9.2.1",
+    "serve": "^14.2.0"
   }
 }
